@@ -1,18 +1,39 @@
-## Getting Started
+EmasSupercomputer
+Энэ код нь twoPluses нэртэй HackerRank-ийн бодлогын шийдэл бөгөөд "G" тэмдэгтэй нүднүүд дээр суурилсан хамгийн том хоёр сөргөлдөхгүй "+" хэлбэрүүдийг олж, талбайн үржвэрийг гаргана.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Эхлээд бид бүхий л боломжит "+" хэлбэрүүдийг олдог. "G" тэмдэгтэй эсүүд дээр суурилан төвөөс тэлж байж "+" хэлбэр бүрийг үүсгэдэг. Тэлэх явцдаа тухайн төвөөс дөрвөн зүг рүү адил хэмжээтэй уртасгаж чадвал тэр нь зөв '+' хэлбэр байна гэж үзнэ.
 
-## Folder Structure
+Дараа нь бүгдийг хадгалж аваад, хоёр "+" хэлбэрийг хослуулан харьцуулж, эсүүд нь давхцахгүй байвал тэдгээрийн талбайн үржвэрийг авна. Ингэж харьцуулж үзээд хамгийн их үржвэрийг хадгална.
 
-The workspace contains two folders by default, where:
+Дараах утгуудыг агуулна:
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+is_valid: тухайн координат дээр өгөгдсөн хэмжээтэй "+" хийж болох эсэхийг шалгана.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+get_cells: "+" хэлбэрийн бүх оролцогч эсүүдийг Set хэлбэрээр буцаана.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+pluses: "+" хэлбэрүүдийн талбай болон тэдгээрийн эсүүдийн байршлуудыг хадгалдаг.
 
-## Dependency Management
+max_product: хамгийн их хоёр "+" хэлбэрийн талбайн үржвэрийг хадгалдаг.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Энэ алгоритм нь grid-ийн бүх боломжит '+' хэлбэрүүдийг олж, дараа нь хоёр бүрэн тусдаа хэлбэрүүдийн хамгийн их талбайн үржвэрийг олдог.
+
+Нэмэлтээр бичсэн кодын тайлбар: isValid функц: Нэг эсээс эхэлж, тухайн '+' хэлбэрийг тухайн урттайгаар үүсгэж чадах эсэхийг шалгана. Дөрвөн зүг рүү ижил хэмжээтэй тэлэх үед бүгд 'G' байх ёстой.
+
+Plus классыг:
+
+x, y: '+' хэлбэрийн төв.
+
+len: '+'-ийн гарны урт.
+
+area(): тухайн '+' хэлбэрийн талбайг буцаана.
+
+getCells(): тухайн '+' хэлбэрт оролцож буй бүх координатыг хадгална (давхардлыг шалгахад ашиглагдана).
+
+twoPluses функц:
+
+Grid дотор бүх боломжит '+' хэлбэрүүдийг бүрдүүлж хадгална.
+
+Хоёр бүрэн тусдаа '+' хэлбэрийн эсүүд давхцахгүй тохиолдолд талбайг үржүүлэн maxProduct-ийг шинэчилнэ.
+
+Хамгийн том хоёр '+'-ийн огтлолцолгүй хамгийн их талбайн үржвэрийг гаргаж байна.
+![alt text](<image (4).png>)

@@ -1,18 +1,40 @@
-## Getting Started
+Linked List Cycle 
+Бодлогын Өгүүлбэр
+Холбоос жагсаалт (linked list) өгөгдсөн бол тэр жагсаалт циклтэй эсэхийг шалгах хэрэгтэй. Жагсаалтын зарим node дараагийн node-оо зааж байвал (дурын node-руу чиглэсэн) тэр жагсаалт циклтэй гэж үзнэ.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Оролт
+Эхний мөрөнд холбоос жагсаалтын урт n байна.
+Хоёр дахь мөрөнд холбоос жагсаалтын node-уудын утгууд байна.
+Гурав дахь мөрөнд цикл үүсгэх position (байрлал) байна. Хэрэв position = -1 бол цикл байхгүй, өөр тохиолдолд position нь цикл эхлэх node-ын индексийг илэрхийлнэ (0-ээс эхлэн тоологдоно).
 
-## Folder Structure
+Гаралт
+Холбоос жагсаалт циклтэй бол "true", циклгүй бол "false" гэж хэвлэ.
 
-The workspace contains two folders by default, where:
+Жишээ
+Оролт 1:
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+4
+1 2 3 4
+1
+Гаралт 1:
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+true
+Тайлбар 1:
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+Холбоос жагсаалт: 1 → 2 → 3 → 4 → 2 (2-р node руу буцаж орсон)
 
-## Dependency Management
+Цикл 1-р индексээс эхэлсэн (2-р node)
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Оролт 2:
+
+4
+1 2 3 4
+-1
+Гаралт 2:
+
+false
+Тайлбар 2:
+
+Холбоос жагсаалт: 1 → 2 → 3 → 4 → null
+
+Цикл байхгүй (position = -1)

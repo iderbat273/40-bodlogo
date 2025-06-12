@@ -1,18 +1,13 @@
-## Getting Started
+IsThisABinarySearchTree
+Кодын товч тайлбар (текстээр): Node класс нь модны нэг зангилааг илэрхийлнэ: data, left, right гэсэн гурван гишүүнтэй.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+checkBST(Node root) функц нь үндсэн шалгалтыг хийнэ. Модны үндэс root-оос эхлэн бүх зангилааг шалгах ба туслах функц isBST()-ийг ашигладаг.
 
-## Folder Structure
+isBST(Node node, int min, int max) функц нь тухайн зангилааны утга зөв хүрээнд байгаа эсэхийг шалгана. Энэ нь BST-ийн гол зарчмыг шалгадаг:
 
-The workspace contains two folders by default, where:
+Зүүн хүүхдүүд эцгээс бага байх ёстой
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Баруун хүүхдүүд эцгээс их байх ёстой Мөн энэ нөхцөл бүх түвшинд биелж байх ёстой тул рекурсив байдлаар шалгана.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Хэрвээ бүх нөхцөл биелвэл true, нэг ч зөрчил илэрвэл false буцаана.
+![alt text](<Screenshot 2025-06-09 171021.png>)

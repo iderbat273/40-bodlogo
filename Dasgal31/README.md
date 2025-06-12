@@ -1,18 +1,43 @@
-## Getting Started
+The Bomberman Game
+bomberMan функцийн нэмэлтээр бичсэн код дараах зарчмаар ажиллана:
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+detonate функц – Bomb-ууд дэлбэрэх үед тухайн cell болон түүний ойр орчмын (дээш, доош, баруун, зүүн) cell-үүдийг устгадаг. Энэ функц дэлбэрэлтийн дараах grid-ийг үүсгэнэ.
 
-## Folder Structure
+n == 1 үед – Эхний төлөв буцаагдана, учир нь ямар ч bomb дэлбэрээгүй байна.
 
-The workspace contains two folders by default, where:
+n тэгш тоо бол – Bomb-ууд 2 секунд тутамд дүүрч дэлбэрдэг учир бүх талбарыг bomb-оор дүүргэсэн төлөв буцна.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+n нь сондгой бөгөөд 3-аас их бол – Дэлбэрэлтүүдийн мөчлөг 4 секунд тутамд давтагддаг. Тиймээс 3, 5, 7 гэх мэт тоонуудад хоёр янзын дэлбэрэлт ээлжилдэг. (n - 3) % 4 == 0 бол анхны дэлбэрэлт, үгүй бол хоёрдахь дэлбэрэлтийн үр дүн буцна. Доорх код нь HackerRank-ийн “Bomberman Game” даалгаврын нэмэлтээр бичигдсэн bomberMan, detonate, болон toList функцуудыг багтаасан. Эдгээр нь Bomberman тоглоомын дүрмээр тэсрэх бөмбөгийг тайлбарлаж, торон дээрх өөрчлөлтүүдийг дүрсэлдэг.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+bomberMan(int n, List grid) Энэ функц нь үндсэн удирдлагын логик бөгөөд энэ мөчид (n секундэд) тор ямар байдалтай байхыг тодорхойлдог:
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+n == 1: эхний байдал өөрчлөгдөөгүй тул шууд буцаана.
 
-## Dependency Management
+n % 2 == 0: 2, 4, 6... секундэд торонд бүхэлдээ бөмбөг дүүрдэг тул "O"-гоор дүүргэсэн тор буцаана.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+n == 3, 7, 11...: анхны дэлбэрэлт гарна. detonate() функц нэг удаа дуудагдана.
+
+n == 5, 9, 13...: хоёр дахь дэлбэрэлт гарна. detonate() хоёр удаа дуудагдана.
+
+detonate(char[][] source) Энэ функц нь тухайн мөчид бөмбөг байгаа байршлыг шалгаад:
+
+Тэр байр болон түүний хөрш 4 тал (дээр, доор, зүүн, баруун) эсрэгээрээ дэлбэрч хоосорно (.).
+
+Дэлбэрээгүй хэсэгт шинэ бөмбөг байна гэж үзэн O тэмдэгтээр дүүргэнэ.
+
+Жишээ нь, ийм тор байсан гэж бодъё:
+
+O.O .O. O.O detonate дуудахад дэлбэрч:
+
+... ... ... болно.
+
+toList(char[][] grid) 2 хэмжээст char массивыг List рүү хөрвүүлдэг туслах функц. HackerRank-ийн шалгах систем List формат шаарддаг тул буцааж өгнө.
+
+Дүгнэлт Эдгээр нэмэлт функцууд нь тоглоомын үеийн бөмбөгийн тэсрэлт, тэсэрсэн хэсгийг арилгах, бөмбөг дахин байрлуулах логикийг агуулсан. Үндсэн зарчим бол:
+
+3 сек тутамд бөмбөг тэсэрнэ
+
+2 сек тутам бүх торонд бөмбөг байна
+
+тоглоомын байдал давтамжтайгаар давтагддаг тул n-ийг бага утгатай тоон циклээр тооцоолдог
+![alt text](<image (1).png>)

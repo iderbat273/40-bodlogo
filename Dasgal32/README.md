@@ -1,18 +1,27 @@
-## Getting Started
+Time In Words
+Тайлбар: words[] массив нь 1-29 хүртэлх тоонуудыг үгээр илэрхийлсэн массив бөгөөд "time in words" бодлого хийхэд ашиглагддаг.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+if (m == 0) — минут 0 бол “x o’ clock” хэлбэрээр буцаана.
 
-## Folder Structure
+else if (m == 15) — 15 минут бол “quarter past x”.
 
-The workspace contains two folders by default, where:
+else if (m == 30) — 30 минут бол “half past x”.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+else if (m == 45) — 45 минут бол “quarter to x+1”.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+else if (m < 30) — 1-29 минутын хооронд бол “x minutes past h”.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+else — 31-59 минутын хооронд бол “x minutes to h+1”.
 
-## Dependency Management
+🧾 Жишээ: Input: 5 47
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Output: thirteen minutes to six
+
+Input: 3 00
+
+Output: three o' clock
+
+Input: 7 15
+
+Output: quarter past seven
+![alt text](<image (2).png>)

@@ -1,18 +1,30 @@
-## Getting Started
+Self Balancing Tree
+Энэхүү бодлогын зорилго нь AVL модонд элемент нэмэх үед модыг тэнцвэржүүлэх (self-balancing) юм.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+AVL мод нь өөрөө тэнцвэржсэн (self-balancing) хоёртын хайлтын мод юм. Модны аль ч зангилааны зүүн ба баруун дэд модны өндрийн ялгаа (balance factor) -1, 0, эсвэл 1 байх үед мод тэнцвэртэй гэж үзнэ. Хэрэв ялгаа нь эдгээр утгаас хэтэрвэл модыг тэнцвэржүүлэх шаардлагатай болдог.
 
-## Folder Structure
+ даалгавар бол энгийн хоёртын хайлтын модны зангилаанд (node) элемент нэмэх функц бичих бөгөөд нэмэлтээр модыг AVL шинж чанарыг хангах ёстой.
 
-The workspace contains two folders by default, where:
+Оролт
+root: Модны үндэс зангилаа
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+val: Нэмэх утга
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+Гаралт
+Шинээр тэнцвэржсэн модны үндэс зангилааг буцаана.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+Жишээ
+Оролт:
+    30
+   /  \
+  20   40
+ /    /  \
+10   35  50
+val = 25 нэмэх
 
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Гаралт:
+    30
+   /  \
+  20   40
+ / \  /  \
+10 25 35 50

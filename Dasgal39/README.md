@@ -1,18 +1,49 @@
-## Getting Started
+FraudulentActivity
+Асуудал:
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Банкны үйлчлүүлэгчийн зарцуулсан мөнгөн дүнгийн жагсаалт өгөгдөнө.
 
-## Folder Structure
+Хэрэв тухайн өдрийн зарцуулалт өмнөх d өдрийн дундаж median-ы 2 дахин их буюу түүнээс их байвал мэдэгдэл илгээнэ.
 
-The workspace contains two folders by default, where:
+Хамгийн сүүлийн өдрүүдийн мэдэгдлийн тоог олно.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Шийдлийн санаа Дундаж (median)-ийг хурдан тооцох ёстой (мэдэгдэл өдөр бүр тооцогдоно).
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+Зарцуулалт 0–200 хооронд хязгаартай учраас counting sort ашиглан урьдчилан тоолно.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+Урьдчилан тооллын массив count нь тухайн d өдрийн цонхонд тухайн үнэ хэр олон удаа гарсныг хадгална.
 
-## Dependency Management
+Цонх тус бүрт median-г count массивыг гүйлгэж олоод дараагийн өдрийг шалгана.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Цонхоо нэг өдөр урагшлуулж, шинэ өдрийн зарцуулалт нэмэгдэж, хамгийн эртний өдрийн зарцуулалт хасагдана.
+
+Кодны тайлбар :
+
+int[] count = new int[201]; count массив: индекс нь зарцуулалтын хэмжээ (0-200), утга нь тухайн цонхны дотор хэдэн удаа гарсныг хадгална.
+
+for (int i = 0; i < d; i++) { count[expenditure.get(i)]++; } Эхний d өдрийн зарцуулалтыг тоолно.
+
+for (int i = d; i < expenditure.size(); i++) { double median = getMedian(count, d); if (expenditure.get(i) >= 2 * median) { notifications++; } count[expenditure.get(i)]++; // шинэ өдрийн зарцуулалт нэмэх count[expenditure.get(i - d)]--; // хамгийн хуучин өдрийн зарцуулалт хасах } i = d-аас эхлэн бүх өдрүүдийг шалгаж:
+
+Өмнөх d өдрийн median-г олно.
+
+Хэрэв өнөөдрийн зарцуулалт median-ын 2 дахин их бол мэдэгдэл нэмнэ.
+
+Цонхны тооллогыг шинэчилнэ.
+
+private static double getMedian(int[] count, int d) { int sum = 0; int median1 = 0; int median2 = 0; if (d % 2 == 1) { int mid = d / 2 + 1; for (int i = 0; i < count.length; i++) { sum += count[i]; if (sum >= mid) { return i; } } } else { int mid1 = d / 2; int mid2 = mid1 + 1; for (int i = 0; i < count.length; i++) { sum += count[i]; if (sum >= mid1 && median1 == 0) median1 = i; if (sum >= mid2) { median2 = i; break; } } return (median1 + median2) / 2.0; } return 0.0; } getMedian функц: count массивыг ашиглан median-г хурдан олох.
+
+Хэрэв d нь тэгш бол median нь хоёр дунд утгын дундаж, сондгой бол гол дунд утга.
+
+Нийтлэг ойлголтууд Median гэдэг нь тухайн өгөгдлийн багцаас дундаж утгыг хэлнэ.
+
+counting sort ашиглах нь хурдан тоолох, median-г хурдан гаргах боломж олгоно.
+
+Цонхны тооллого (sliding window) ашиглан өмнөх d өдрийн мэдээллийг хадгалах ба өдөр бүр шинэчлэх.
+
+Ингээд та энэ кодыг ашиглан: Өдөр бүрийн median-г хурдан олж,
+
+Зарцуулалт 2 дахин их байвал мэдэгдэл өгч,
+
+Мэдэгдлийн нийт тоог буцааж авах болно.
+![alt text](<image (5).png>)

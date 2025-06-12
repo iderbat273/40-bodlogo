@@ -1,18 +1,39 @@
-## Getting Started
+Knight On A Chessboard
+Даалгаврын зорилго Шатарын морьны хөдөлгөөний нэгэн хувилбар болох (a, b) алхалттай морь 0, 0-оос n - 1, n - 1 хүртэл хамгийн бага хэдэн алхмаар очих боломжтойг бүх боломжит a болон b (1 ≤ a, b < n) хосын хувьд тооцоолно. Үр дүнг n-1 x n-1 хэмжээтэй хүснэгт хэлбэрээр буцаана.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Шийдэл гаргах үндсэн санаа Морьны хөдөлгөөн (a, b) байхад тэр 8 чиглэлд шилжих боломжтой (жишээ нь (+a, +b), (+a, -b), (-a, +b), гэх мэт). Иймд бид:
 
-## Folder Structure
+Бүх боломжит a, b хосыг туршихын тулд давталт хийнэ.
 
-The workspace contains two folders by default, where:
+Тухайн a, b-ийн хувьд BFS (Breadth-First Search) ашиглан эхлэлээс төгсгөл хүртэл хамгийн бага алхамыг тооцно.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Хариуг 2D жагсаалт (List<List>) болгон буцаана.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+Алгоритмын ажиллах дараалал knightlOnAChessboard(n) функц нь a = 1-ээс n - 1 хүртэл, b = 1-ээс n - 1 хүртэл давталт хийдэг.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+bfs(n, a, b) функц бүр a, b хосын хувьд 0, 0-оос n-1, n-1 рүү явах хамгийн бага алхамыг тооцно.
 
-## Dependency Management
+bfs функцийн дотор queue (дараалал) ашиглан BFS хийнэ:
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Одоогийн байрлал болон тухайн хүртэл хийсэн алхамын тоог хадгална.
+
+Хэрвээ n-1, n-1 цэгт хүрвэл тухайн алхамын тоог буцаана.
+
+Хүрч чадахгүй бол -1 буцаана.
+
+Жишээ Жишээ нь n = 5 байвал, бид a = 1..4, b = 1..4 (өөрөөр хэлбэл 16 өөр хосын хувьд) дараах байдлаар тооцно:
+
+a\b 1 2 3 4 1 x x x x 2 x x x x 3 x x x x 4 x x x x
+
+Энд x нь 0,0 → 4,4 хүртэлх хамгийн бага алхам.
+
+Давуу болон сул талууд Давуу талууд: BFS нь хамгийн богино зам олох баталгаатай арга тул баталгаатай хариу өгнө.
+
+Бүх боломжит (a, b) хосыг хамардаг.
+
+Сул талууд: O(n⁴) төвөгшилтэй (хязгаар дотор багтдаг ч том n дээр удаан болно).
+
+BFS бүр тусдаа хийгдэж байгаа учир их хэмжээний дурсамж хэрэглэж магадгүй.
+
+Дүгнэлт Энэ бодлого нь граф дээрх хамгийн богино замыг өөр өөр “хөдөлгөөний дүрэм”-тэйгээр бодож сургах зорилготой. Хэрэв таны хөдөлгөөний дүрэм өөр бол хамгийн богино зам хэрхэн өөрчлөгдөхийг BFS ашиглан бодож гаргах нь энэ бодлогын гол санаа юм.
+![alt text](<Screenshot 2025-06-09 201013.png>)

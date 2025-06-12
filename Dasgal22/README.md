@@ -1,18 +1,25 @@
-## Getting Started
+Max Min
+Бодлогын Тайлбар
+Асуудал:
+Бидэнд n ширхэг бүхэл тоо өгөгдсөн байна. Эдгээр тоонуудаас k ширхэгийг сонгох бөгөөд сонгосон тоонуудын "хамгийн их ба хамгийн бага"-ын ялгавар (unfairness) хамгийн бага байхаар сонгох хэрэгтэй.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Жишээ:
+Өгөгдсөн тоонууд: [10, 100, 300, 200, 1000, 20, 30]
+k = 3 гэвэл:
 
-## Folder Structure
+[10, 20, 30] сонгосон тохиолдолд ялгавар: 30 - 10 = 20
 
-The workspace contains two folders by default, where:
+[20, 30, 100] сонгосон тохиолдолд ялгавар: 100 - 20 = 80
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+[10, 100, 1000] сонгосон тохиолдолд ялгавар: 1000 - 10 = 990
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+Хамгийн бага ялгавар нь 20 байна.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+Бодолт:
 
-## Dependency Management
+Эхлээд тоонуудыг эрэмбэлнэ.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Дараа нь k урттай бүх дэд жагсаалтыг шалгаж, хамгийн бага ялгаварыг олно.
+
+Гэхдээ бүх дэд жагсаалтыг шалгахын оронд эрэмбэлсэн жагсаалтаас дараалсан k тоонуудыг шалгах хангалттай (учир нь эрэмбэлсэн тоонуудын дундах ялгавар хамгийн бага байх магадлалтай).
+![alt text](<Screenshot (303).png>)

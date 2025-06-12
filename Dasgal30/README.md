@@ -1,18 +1,58 @@
-## Getting Started
+Pairs
+Дасгалын зорилго Өгөгдсөн тоон массив дахь бүх хосуудыг олох явдал юм. Эдгээр хосууд нь ялгаатай индексүүдтэй бөгөөд тэдний утгуудын ялгаа k-тэй тэнцүү байх ёстой. Товчхондоо, хоёр элементийн аль нэг нь нөгөөгөөсөө яг k илүү буюу бага байвал тэр хосыг тоолно.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Жишээ нь:
 
-## Folder Structure
+Массив: [1, 5, 3, 4, 2]
 
-The workspace contains two folders by default, where:
+k = 2
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Бидний хайх хосууд: (1,3), (3,5), (4,2) - эдгээр нь ялгаатай бөгөөд ялгаа нь 2 байна.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+Асуудлыг хэрхэн шийдэх вэ? Итгэлтэй, шууд арга нь бүх элемент хоорондоо ялгааг харьцуулах юм. Гэвч энэ нь O(n^2) цагийн төвөгтэй байдалтай тул том массивад удаан ажиллана.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+Хурдан арга: Бид HashSet ашиглан элементийн хурдан хайлтыг ашиглана.
 
-## Dependency Management
+Бүх элементийг HashSet рүү хийж хадгална. HashSet нь элемент хайхад дунджаар O(1) хугацаа зарцуулдаг.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Массивын бүх элементийг нэг нэгээр нь авч үзээд, тухайн элемент дээр k-г нэмээд, тэр утга HashSet дотор байгаа эсэхийг шалгана.
+
+Хэрэв байгаа бол нэг хос олсон гэсэн үг.
+
+Ингэж бүрэн массивыг нэг удаа эргүүлж, хосуудын тоог гаргана.
+
+Кодыг тайлбарлая
+
+public static int pairs(int k, List arr) { Set elements = new HashSet<>(arr); int count = 0;
+
+for (int x : arr) {
+    if (elements.contains(x + k)) {
+        count++;
+    }
+}
+
+return count;
+} Set elements = new HashSet<>(arr);
+
+Энэ мөрөөр массивын бүх элементүүдийг HashSet рүү нэг удаа хийж байна. Ингэснээр бид элемент хайхад хурдан болох юм.
+
+int count = 0;
+
+Хайсан хосуудын тоог хадгалах хувьсагч.
+
+for (int x : arr) { ... }
+
+Массивын бүх элементийг нэг нэгээр нь авч үзнэ.
+
+if (elements.contains(x + k)) { count++; }
+
+Хэрэв x-ээс k их утга нь HashSet дотор байгаа бол энэ нь хос үүсгэж байгааг илтгэнэ. Тиймээс тоог нэгээр нэмнэ.
+
+Эцэст нь count буюу олдсон хосуудын тоог буцаана.
+
+Яагаад зөв? HashSet нь дунджаар хайлтыг O(1) хугацаанд хийдэг учраас массив дээр нэг удаа эргэлдэж, бүрэн шийдлийг хурдан олно.
+
+Хосуудын тоог буцааж байгаа тул хариу зөв гарна.
+
+Энэ арга нь том массивууд дээр ч хурдан ажиллана.
+![alt text](<Screenshot 2025-06-09 194916.png>)

@@ -1,18 +1,39 @@
-## Getting Started
+Queue using Two Stacks
+Энэхүү бодлогын зорилго нь хоёр стек ашиглан queue (данс) өгөгдлийн бүтцийг хэрэгжүүлэх юм.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Асуудлын тодорхойлолт
+Queue нь FIFO (First In First Out - эхэнд оруулсан эхэнд гарна) зарчимд ажилладаг өгөгдлийн бүтэц юм. Таны даалгавар бол зөвхөн хоёр стек ашиглан queue-ийг хэрэгжүүлэх явдал юм.
 
-## Folder Structure
+Дараах 3 төрлийн үйлдлийг дэмжих ёстой:
 
-The workspace contains two folders by default, where:
+1 x: Queue-д x утгыг оруулах (enqueue)
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+2: Queue-ээс хамгийн түрүүнд орсон элементийг хасах (dequeue)
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+3: Queue-ийн хамгийн түрүүнд орсон элементийг хэвлэх (peek)
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+Оролт
+Эхний мөрөнд ашиглах үйлдлийн тоо q өгөгдөнө.
 
-## Dependency Management
+Дараагийн q мөр бүрт дээрх 3 төрлийн үйлдлүүдийн аль нэгийг агуулсан мөр өгөгдөнө.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Гаралт
+3-р төрлийн үйлдэл бүрийн үр дүнд гарч ирэх утгыг хэвлэнэ.
+
+Жишээ
+Оролт:
+10
+1 42
+2
+1 14
+3
+1 28
+3
+1 60
+1 78
+2
+2
+Гаралт:
+14
+14
+![alt text](<Screenshot (305).png>)

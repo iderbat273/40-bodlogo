@@ -1,18 +1,35 @@
-## Getting Started
+Minimum Loss
+Даалгаврын зорилго Өгөгдсөн хугацааны дараалалтай орон сууцны үнэ байна. Таны зорилго бол орон сууцыг аль болох бага алдагдалтайгаар зарах явдал юм. Гэхдээ үнийг зөвхөн худалдан авсан өдрөөс хойшхи өдөр зарах боломжтой.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Бидэнд тухайн орон сууцны үнэ, худалдан авсан өдрийн дараалал өгөгдөж байгаа.
 
-## Folder Structure
+Шийдэх арга Үнийн жагсаалтыг индекстэй хамт авч үзнэ.
 
-The workspace contains two folders by default, where:
+Үнийг өсөх дарааллаар эрэмбэлнэ.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Ингэснээр хамгийн ойрын үнэ ялгаанууд гарч ирнэ.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+Гэхдээ эрэмбэлсний дараах индексүүд худалдан авсан өдөр болон зарах өдрийг илэрхийлэх учир индексүүдийг харьцуулж, зөв дараалал буюу худалдан авсан өдөр зарах өдрөөс өмнө гэдгийг шалгана.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+Ингэснээр хамгийн бага алдагдлыг хурдан олоно.
 
-## Dependency Management
+Яагаад ингэж шийдэв? Эхлээд үнэ болон индексийг хадгалах нь үнэ болон өдөр хоорондын холбоог алдалгүй хадгалах зорилготой.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Үнийг эрэмбэлснээр хамгийн ойрын үнэ ялгаа удаан хугацааны давталт хийхгүйгээр олдох боломжтой болно.
+
+Ингэснээр бүх хослолыг шалгахгүйгээр зөвхөн эрэмбэлэгдсэн дараалсан хосуудын ялгааг тооцно.
+
+Индексийн ялгаагаар худалдан авсан өдөр зарах өдрөөс өмнөх эсэхийг шалгаж, зөв хосыг олж авна.
+
+Кодын логик дараалал Үнийн ба индексийн хосыг хоёр хэмжээст массиванд хадгална.
+
+Arrays.sort ашиглан үнийг өсөх дарааллаар эрэмбэлнэ.
+
+Дараалсан хоёр үнийн ялгааг тооцоолно.
+
+Үнийн ялгаа эерэг, хамгийн бага байх үед хадгална.
+
+Гэхдээ индексийн ялгаа эерэг (худалдан авсан өдөр зарах өдрөөс өмнө) байх ёстой.
+
+Эцэст нь олдсон хамгийн бага алдагдлыг буцаана.
+![alt text](<Screenshot 2025-06-09 195652.png>)
